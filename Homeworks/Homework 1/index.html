@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Horas de trabajo</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+    <h1>Registro horario de trabajadores</h1>
+    <hr>
+    <form>
+        <h4>Hora de entrada (Formato de 24 horas)</h4>
+        <input type="number" id="iIntroHour" placeholder="Hora"><span> : </span>
+        <input type="number" id="iIntroMinute" placeholder="Minuto"><span> : </span>
+        <input type="number" id="iIntroSecond" placeholder="Segundo">
+        <h4>Hora de salida (formato de 24 horas)</h4>
+        <input type="number" id="iExitHour" placeholder="Hora"><span> : </span>
+        <input type="number" id="iExitMinute" placeholder="Minuto"><span> : </span>
+        <input type="number" id="iExitSecond" placeholder="Segundo"><br><br>
+        <button type="button" id="btnCalcular">Calcular</button><br>
+    </form>
+    <h4>Horas totales</h4><p id="pResultado"></p>
+</body>
+<script src="main.js"></script>
+</html>
