@@ -1,0 +1,18 @@
+thead, tbody, th, td, tr{
+    width: 125px;
+    text-align: center;
+}
+
+hr{
+    width: 75%;
+}
+
+h1, p, span{
+    align-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+#btnComenzar{
+    margin-left: 45.5%;
+}
