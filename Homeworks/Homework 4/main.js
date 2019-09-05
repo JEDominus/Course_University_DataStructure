@@ -1,28 +1,28 @@
 import Tortuga from "./Tortuga.js";
 import Liebre from "./Liebre.js";
 
-var btnComenzar = document.querySelector("#btnComenzar").addEventListener("click", startGame);
-var tablaProgreso = document.querySelector("#tablaProgreso");
-var pGanador = document.querySelector("#pGanador");
-var pCarrera = document.querySelector("#pCarrera");
-var carrera = 1;
+var btnComenzar = document.querySelector("#btnComenzar").addEventListener("click", startGame);//Boton para dar inicio a una carrera
+var tablaProgreso = document.querySelector("#tablaProgreso");//Tabla donde se imprime el progreso de la carrera
+var pGanador = document.querySelector("#pGanador");//variable de impresion del ganador
+var pCarrera = document.querySelector("#pCarrera");//variable de impresion del numero de la carrera
+var carrera = 1;//Contador de carreras realizadas
 
-var tortuga = new Tortuga();
-var liebre = new Liebre();
+var tortuga = new Tortuga();//Competidor
+var liebre = new Liebre();//Competidor
 
-function startGame(){
-    reiniciarPosicion();
-    tablaProgreso.textContent = "";
-    pGanador.textContent = competir();
+function startGame(){//Aumenta numero de carrea, limpia tabla, reinicia posiciones, comienza con la competicion
     pCarrera.textContent = carrera++;
+    tablaProgreso.textContent = "";
+    reiniciarPosicion();
+    pGanador.textContent = competir();
 }
 
-function accionLiebre(){
+function accionLiebre(){//Ejecuta un metodo de la clase Liebre y retorna la accion en la tabla
     let saltoPequeño = "Salto Pequeño";
     let saltoGrande = "Salto Grande";
     let dormir = "Dormir";
-    let resvalonPequeño = "Resvalon Pequeño";
-    let resvalonGrande = "Resvalon Grande";
+    let resvalonPequeño = "Resbalon Pequeño";
+    let resvalonGrande = "Resbalon Grande";
 
     if(liebre.jugarTurno()<36){
         liebre.saltoPequeño();
@@ -45,9 +45,9 @@ function accionLiebre(){
 function accionTortuga(){
     let pasoRapido = "Paso Rapido";
     let pasoLento = "Paso Lento";
-    let resvalon = "Resvalon";
+    let resvalon = "Resbalon";
 
-    if(tortuga.jugarTurno()<51){
+    if(tortuga.jugarTurno()<51){//variable
         tortuga.pasoRapido();
         return pasoRapido;
     }else if(tortuga.jugarTurno()>50 && tortuga.jugarTurno()<81){
@@ -70,14 +70,17 @@ function competir(){
 
         i++;
 
-        if(tortuga.posicion>90 && liebre.posicion<91){
-            return tortugaGanadora;
-        }else if(tortuga.posicion<90 && liebre.posicion>91){
-            return liebreGanadora;
-        }else if(tortuga.posicion>90 && liebre.posicion>90){
-            return empate;
-        }
-    }while(tortuga.posicion < 91 || liebre.posicion < 91);
+    }while(tortuga.posicion < 90 && liebre.posicion < 90);
+
+    if(tortuga.posicion>90 && liebre.posicion<91){
+        return tortugaGanadora;
+    }else if(tortuga.posicion<90 && liebre.posicion>91){
+        return liebreGanadora;
+    }else{
+        return empate;
+    }
+
+
 }
 
 function reiniciarPosicion(){

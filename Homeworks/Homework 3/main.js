@@ -9,15 +9,14 @@ let p1 = new Punto("1");
 let p2 = new Punto("2");
 pPunto1.textContent = p1.toString();
 pPunto2.textContent = p2.toString();
-pDistancia.textContent = cDistancia();
+p1.cDistancia(p2.posicionX, p2.posicionY);
 
 function actualizarP1(){
     let iAbscisa = document.querySelector("#iXp1").value;
     let iOrdenada = document.querySelector("#iYp1").value;
-
     p1.posicionX = iAbscisa;
     p1.posicionY = iOrdenada;
-    pDistancia.textContent = cDistancia();
+    pDistancia.textContent = p1.cDistancia(p2.posicion);
 
     return pPunto1.textContent = p1.toString();
 }
@@ -25,22 +24,11 @@ function actualizarP1(){
 function actualizarP2(){
     let iAbscisa = document.querySelector("#iXp2").value;
     let iOrdenada = document.querySelector("#iYp2").value;
-
+    
     p2.posicionX = iAbscisa;
     p2.posicionY = iOrdenada;
-    pDistancia.textContent = cDistancia();
+    pDistancia.textContent = p1.cDistancia(p2.posicion);
 
     return pPunto2.textContent = p2.toString();
 }
 
-function cDistancia(){
-     let result = Math.sqrt(
-        Math.pow(
-            (p2.posicionX - p1.posicionX), 2
-        ) + Math.pow(
-            (p2.posicionY - p1.posicionY), 2
-        )
-    );
-
-    return result;
-}

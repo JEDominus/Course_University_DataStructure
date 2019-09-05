@@ -31,6 +31,18 @@ export default class Punto{
         }
     }
 
+    cDistancia(destx, desty){
+        let result = Math.sqrt(
+           Math.pow(
+               (Number(destx) - Number(this._posicionX)), 2
+           ) + Math.pow(
+               (Number(desty) - Number(this._posicionY)), 2
+           )
+       );
+   
+       return result;
+   }
+
     toString(){
         let result = "Posicion actual del punto "+ this._id + ": " + "(" + this._posicionX + "," + this._posicionY + ")";
         return result;
