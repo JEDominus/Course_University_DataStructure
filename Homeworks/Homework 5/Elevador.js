@@ -14,8 +14,8 @@ export default class Elevador{
         return this._pisoActual;
     }
 
-    set pisoActual(val){
-        this._pisoActual = val;
+    set pisoActual(valor){
+        this._pisoActual = valor;
         return this._pisoActual;
     }
 
