@@ -1,11 +1,15 @@
 import Ruta from "./Ruta.js";
-import Base from "./Base.js";
 
-class Salida{
-    constructor(secuencia, ruta, base, horaInicio, horaFin){
+export default class Salida{
+    constructor(secuencia, horaInicio, horaFin){
         this._secuencia = secuencia;
-        this._ruta = new Ruta(ruta); //Objeto local como parametro
-        this._base = new Base(base); //Objeto local como parametro
+        this._rutas = [
+            new Ruta(1, 0),
+            new Ruta(2, 0),
+            new Ruta(3, 0),
+            new Ruta(4, 0),
+            new Ruta(5, 0),
+        ];
         this._horaInicio = horaInicio;
         this._horaFin = horaFin;
     }
@@ -15,11 +19,7 @@ class Salida{
     }
 
     get ruta(){
-        return this._ruta;
-    }
-
-    get base(){
-        return this._base;
+        return this._rutas;
     }
 
     get horaInicio(){
@@ -30,11 +30,11 @@ class Salida{
         return this._horaFin;
     }
 
-    set horaInicio(nuevaHora){
+    set horaInicio(nuevaHora){ //Modificar el tiempo de inicio a laborar de cada salida de ruta
         return this._horaInicio = nuevaHora;
     }
 
-    set horaFin(nuevaHora){
+    set horaFin(nuevaHora){ //Modificar el tiempo de fin a laborar de cada salida de ruta
         return this._horaFin = nuevaHora;
     }
 }

@@ -1,8 +1,8 @@
 export default class Base{
-    constructor(base){
-        this._nombre = base.nombre;
-        this._latitud = base.latitud; //X
-        this._longitud = base.longitud; //Y
+    constructor(nombre, latitud, longitud){
+        this._nombre = nombre;
+        this._latitud = latitud; //X
+        this._longitud = longitud; //Y
     }
 
     get nombre(){
