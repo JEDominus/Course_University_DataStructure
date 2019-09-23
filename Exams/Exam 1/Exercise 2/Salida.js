@@ -29,4 +29,12 @@ class Salida{
     get horaFin(){
         return this._horaFin;
     }
+
+    set horaInicio(nuevaHora){
+        return this._horaInicio = nuevaHora;
+    }
+
+    set horaFin(nuevaHora){
+        return this._horaFin = nuevaHora;
+    }
 }
