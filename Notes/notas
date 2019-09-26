@@ -23,7 +23,7 @@ Liebre---
         if num......... this._posicion+=k;
     }
 
-Crear una clase qie ,e pormita controlar in elevador
+Crear una clase que me permita controlar un elevador
 Al construir debo decir de cuantos pisos y su capcidad
 Puedo mover el elevador entre los pisos
 Estado de la puerta
