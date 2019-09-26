@@ -22,6 +22,9 @@ document.querySelector("#btnRegister").addEventListener("click", () => {
             description: description
         }
 
+        //Si el ultimo campos esta lleno, Usar la ultima funcion declarada, 
+        //Si no, hacer un simple .push
+
         let articulo = new Articulo(objArticulo);
         addArticulo(articulo);
         pText.textContent = articulo.add2string();
@@ -32,6 +35,7 @@ document.querySelector("#btnRegister").addEventListener("click", () => {
     }
 });
 
+//Busqueda e impresion de articulo
 document.querySelector("#btnSearch").addEventListener("click", () =>{
     let srch = document.querySelector("#iSearch").value;
 
@@ -108,4 +112,15 @@ function delArticulo(row, articulo){
     articulos.splice(pos, 1);
     pText.textContent = articulo.del2string();
     row.remove();
+}
+
+function movePosition(position, articulo){//Reconstruccion del vector usando otro y comparando posiciones
+    //Variable que guarde la posicion ingresada en la pagina (Ultimo input)
+
+    //Usar un vector vacio que recibira los objetos del vector existente uno por uno
+
+    //Antes de pasar los objetos al nuevo vector Preguntar si estan en la posicion deseada
+        //Si no lo esta, agregar el abjeto en la posicion que ya estaba
+        //Si lo esta, tomar el nuevo objeto y meterlo en la posicion deseada
+            //Acto seguido, tomar el siguiente objeto y meterlo en la posicion siguiente a su posicion antigua
 }
