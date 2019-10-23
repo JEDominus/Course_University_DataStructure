@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Sistema de rutas</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="main.css">
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="jumbotron">
+            <h1>Sistema de Rutas</h1>
+        </div>
+        <div class="row justify-content-around">
+            <h4 class="col-md-6">Registro de bases</h4>
+            <h4 class="col-md-6">Recorridos</h4>
+        </div>
+        <div class="row justify-content-around">
+            <div class="col-md-6">
+                <form id="form">
+                    <div class="form-group row">
+                        <label class="col-md-2">Nombre:</label>
+                        <input type="text" class="form-control col-md-10" id="iName" placeholder="Rojos" required>
+                        <div class="valid-feedback"></div>
+                        <div class="invalid-feedback"></div>
+                        <label class="col-md-2">Minutos:</label>
+                        <input type="number" class="form-control col-md-10" id="iMinutes"  placeholder="Cantidad en minutos" required>
+                        <div class="valid-feedback"></div>
+                        <div class="invalid-feedback"></div>
+                        <button class="btn btn-dark form-control ml-2 mt-2" type="reset" id="btnRegister">Agregar Base</button>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-md-2">Nombre:</label>
+                        <input type="text" class="form-control col-md-10" id="iSearch"  placeholder="Nombre de la base">
+                        <button class="btn btn-dark form-control ml-2 mt-2" type="reset" id="btnSearch">Buscar base</button>
+                        <button class="btn btn-dark form-control ml-2 mt-2" type="reset" id="btnDelete">Eliminar base</button>
+                    </div>
+                </form>
+            </div>
+            <div class="col-md-6 row">
+                <label class="col-md-3">Base de partida:</label>
+                <input type="text" class="form-control col-md-9" id="iBase" placeholder="Rojos" required>
+                <div class="valid-feedback"></div>
+                <div class="invalid-feedback"></div>   
+                <label class="col-md-3">Hora de partida:</label>
+                <input type="number" class="form-control col-md-4" id="iInitHour" placeholder="Hora: 00 -23" required>
+                <input type="number" class="form-control col-md-4" id="iInitMinute" placeholder="Minuto: 00 - 59" required>
+                <div class="valid-feedback"></div>
+                <div class="invalid-feedback"></div> 
+                <label class="col-md-3">Hora de finalizacion:</label>
+                <input type="number" max="23" min="00" class="form-control col-md-4" id="iFinishHour" placeholder="Hora: 00 - 23" required>
+                <input type="number" max="59" min="00" class="form-control col-md-4" id="iFinishMinute" placeholder="Minuto: 00 - 59" required>
+                <div class="valid-feedback"></div>
+                <div class="invalid-feedback"></div> 
+                <button class="btn btn-dark form-control ml-2 mt-2" type="reset" id="btnStart">Comenzar recorrido</button>
+            </div>
+        </div>
+    </div>
+<script src="main.js" type="module"></script>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
+</body>
+</html>
