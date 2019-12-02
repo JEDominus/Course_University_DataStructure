@@ -41,6 +41,90 @@ export default class Manager{
         console.log(this._first);
     }
 
+    treeBuilder(){
+        let something = this._first;
+
+        while(something.next != null){
+            if(something.val == "*"){
+                something.left = something.previus;
+                something.right = something.next;
+                something.previus.previus.next = something;
+                something.previus = something.previus.previus;
+                something.next.next.previus = something;
+                something.next = something.next.next;
+
+                something = something.next;
+            }else{
+                something = something.next;
+            }
+        }
+
+        while(something.previus!=null){
+            something = something.previus;
+        }
+
+        while(something.next != null){
+            if(something.val == "/"){
+                something.left = something.previus;
+                something.right = something.next;
+                something.previus.previus.next = something;
+                something.previus = something.previus.previus;
+                something.next.next.previus = something;
+                something.next = something.next.next;
+
+                something = something.next;
+            }else{
+                something = something.next;
+            }
+        }
+
+        while(something.previus!=null){
+            something = something.previus;
+        }
+
+        while(something.next != null){
+            if(something.val == "-"){
+                something.left = something.previus;
+                something.right = something.next;
+                something.previus.previus.next = something;
+                something.previus = something.previus.previus;
+                something.next.next.previus = something;
+                something.next = something.next.next;
+
+                something = something.next;
+            }else{
+                something = something.next;
+            }
+        }
+
+        while(something.previus!=null){
+            something = something.previus;
+        }
+
+        while(something.next != null){
+            if(something.val == "+"){
+                something.left = something.previus;
+                something.right = something.next;
+                something.previus.previus.next = something;
+                something.previus = something.previus.previus;
+                something.next.next.previus = something;
+                something.next = something.next.next;
+
+                something = something.next;
+            }else{
+                something = something.next;
+            }
+        }
+
+        while(something.previus!=null){
+            something = something.previus;
+        }
+
+        this._root = something;
+
+        console.log(this._root);
+    }
+
     _createNodeBase(nodeBase){
         let nodeBaseX = new NodeBase(nodeBase);
 

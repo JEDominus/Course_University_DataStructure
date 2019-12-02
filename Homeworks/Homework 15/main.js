@@ -12,3 +12,7 @@ document.querySelector("#btnRegister").addEventListener("click", () => {
 document.querySelector("#btnClear").addEventListener("click", () => {
     manager.explodeExpression();
 });
+
+document.querySelector("#btnCalculate").addEventListener("click", () => {
+    manager.treeBuilder();
+});
