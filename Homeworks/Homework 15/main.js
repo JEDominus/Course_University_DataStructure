@@ -8,3 +8,7 @@ document.querySelector("#btnRegister").addEventListener("click", () => {
 
     manager.stringDestroyer(expression);
 });
+
+document.querySelector("#btnClear").addEventListener("click", () => {
+    manager.explodeExpression();
+});

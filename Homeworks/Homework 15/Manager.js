@@ -35,6 +35,12 @@ export default class Manager{
         console.log(this._first);
     }
 
+    explodeExpression(){    
+        this._first = null;
+        this._root = null;
+        console.log(this._first);
+    }
+
     _createNodeBase(nodeBase){
         let nodeBaseX = new NodeBase(nodeBase);
 
